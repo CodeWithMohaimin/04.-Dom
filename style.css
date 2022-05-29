@@ -22,7 +22,7 @@
                 1px 1px 0 #fff ;
 }
 
-#btn{
+#change_btn{
     background-color: #fff;
     border: 1.7px solid rebeccapurple;
     padding: 13px 25px;
@@ -32,7 +32,7 @@
     
 }
 
-#btn:hover{
+#change_btn:hover{
     background-color: rgb(91, 126, 199);
     transition: ease .50s;
 }
