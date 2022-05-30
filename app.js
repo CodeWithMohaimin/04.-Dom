@@ -2,6 +2,7 @@
 window.onload = () => {
     main()
 }
+// main function =====
 function main() {
     const root = document.getElementById('root');
     const copy_btn = document.getElementById('copy_btn');
@@ -14,12 +15,13 @@ function main() {
 
         output.value = bgColor;
     })
+    //copy button ========
     copy_btn.addEventListener('click', function () {
         navigator.clipboard.writeText(output.value)
     })
 }
 
-//Generate Hex color
+//Generate Hex color=======
 
 function hex() {
     const red = Math.floor(Math.random()*255);
