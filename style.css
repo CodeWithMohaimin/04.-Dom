@@ -1,4 +1,7 @@
 
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -60,8 +63,8 @@ abbr{
 .toast_message{
     position: fixed;
     z-index: 100;
-    top: 2rem;
-    right: 2rem;
+    top: 4rem;
+    right: 5rem;
     background-color: #5dbb8f;
     color: #fff;
     border: none;
@@ -71,15 +74,18 @@ abbr{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* toast message css  */
+
 .toast_message_slide_in{
     animation: toast_animation_in 0.5s ease-in;
 }
 
-.toast_message_slide_in{
+.toast_message_slide_out{
     animation: toast_animation_out 0.5s ease-in;
 }
 
-@keyframes toast_animation_out{
+@keyframes toast_animation_in{
     from{
         transform: translateX(200px) ;
         opacity: 0;
@@ -90,7 +96,7 @@ abbr{
     }
 }
 
-@keyframes toast_animation_in{
+@keyframes toast_animation_out{
     from{
         transform: translateX(0px) ;
         opacity: 1;

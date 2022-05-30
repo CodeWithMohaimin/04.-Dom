@@ -1,3 +1,14 @@
+/*-------project Requirements:
+    * - Change the background color by generating a random hex or RGB color by clicking a button.
+
+    * - Also display the color code to a disable input field
+    * - Add a button to Copy the color code
+    * - Add a toast message
+    
+*/
+
+//Global 
+let div = null;
 
 window.onload = () => {
     main()
@@ -15,9 +26,17 @@ function main() {
 
         output.value = bgColor;
     })
+
+
+
     //copy button ========
     copy_btn.addEventListener('click', function () {
         navigator.clipboard.writeText(output.value)
+        if (div !== null) {
+            div.remove()
+            div = null;
+        }
+        generateToastMsg(output.value +' '+'copied')
     })
 }
 
@@ -31,3 +50,34 @@ function hex() {
     // return `rgb(${red},${green},${blue})`
     return `#${red.toString(16)}${blue.toString(16)}${green.toString(16)}`
 }
+
+
+
+
+function generateToastMsg(msg) {
+    div = document.createElement('div')
+    div.innerText = msg
+    div.className = 'toast_message toast_message_slide_in'
+
+    div.addEventListener('click', function () {
+        div.classList.remove('toast_message_slide_in')
+        div.classList.add('toast_message_slide_out')
+
+        div.addEventListener('animationend', function () {
+            div.remove();
+            div = null;
+        })
+    })
+
+
+    document.body.appendChild(div)
+}
+
+
+
+
+
+
+
+//steps 6 - creat toast message 
+//steps 7 - clear toast message
